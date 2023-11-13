@@ -6,7 +6,7 @@ const App: React.FC = () => {
 
   // This useEffect will run after the component has rendered
   useEffect(() => {
-    RNBootSplash.hide({ duration: 600 });
+    // RNBootSplash.hide({ duration: 600 });
   }, []); // You can specify dependencies here
 
   return (

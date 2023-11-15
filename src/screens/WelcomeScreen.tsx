@@ -1,164 +1,147 @@
-// HomeScreen.tsx
-
 import React from 'react';
-import { View, Text, SafeAreaView, Image, StyleSheet, Platform, TouchableOpacity, ScrollView } from 'react-native';
+import { 
+  View, 
+  Text, 
+  Image, 
+  StyleSheet, 
+  Platform, 
+  TouchableOpacity, 
+  ScrollView 
+} from 'react-native';
 import { ImagePaths } from '../constant/images';
-import { screenSize } from '../constant/screenSize';
 import { fontFamily } from '../constant/fontFamily';
 import RoundedButton from '../components/RoundedButton';
 
 const WelcomeScreen: React.FC = () => {
   return (
-    <ScrollView 
-    bounces={false}
-    showsVerticalScrollIndicator={false}
-    style={{flex:1,backgroundColor:'#F7F6F8'}}>
-    <Image 
-    source={ImagePaths.signupLayout}
-    style={{
-      width:314,
-      height:175,
-      resizeMode:'stretch',
-      alignSelf:'flex-end'
-    }}
-    ></Image>
-    <Image 
-    source={ImagePaths.logo}
-    style={{
-      width:160,
-      height:52,
-      position:'absolute',
-      top:94,
-      left:28
-    }}
-    ></Image>
-    <View style={{
-      marginHorizontal:30,
-    }}>
-      <Text style={{
-        fontFamily:fontFamily.bold,
-        fontSize:28,
-        color:'#292929'
-        }}>W<Text style={{
-          fontFamily:fontFamily.light,
-          fontSize:28,
-          color:'#292929'
-          }}>elcome</Text>
-      </Text>
-      <Text style={{
-          fontFamily:fontFamily.regular,
-          fontSize:15,
-          color:'#292929',
-          marginVertical:9,
-          }}>Choose one of the below to get started
-      </Text>
-      <ScrollView>
-      <RoundedButton
-       onPress={()=>{}}
-       buttonName='Mobile Number'
-       imageUrl={ImagePaths.smartphone}
-       labelStyle={styles.buttonText}
-       iconStyle={styles.smartPhoneIcon}
-       containerStyle={styles.mobileContainer}
-       />
-       <RoundedButton
-       onPress={()=>{}}
-       buttonName='Email Address'
-       imageUrl={ImagePaths.email}
-       containerStyle={styles.emailContainer}
-       labelStyle={styles.buttonText}
-       iconStyle={styles.emailIcon}/>
-       <RoundedButton
-       onPress={()=>{}}
-       buttonName='Sign in with Google'
-       imageUrl={ImagePaths.google}
-       containerStyle={styles.googleContainer}
-       labelStyle={styles.googleLabel}
-       iconStyle={styles.ggogleIcon}/>
-       <RoundedButton
-       onPress={()=>{}}
-       buttonName='Sign in with Facebook'
-       imageUrl={ImagePaths.facebook}
-       labelStyle={styles.facebookLabel}
-       iconStyle={styles.facebookIcon}
-       containerStyle={styles.facebookContainer}/>
-       {!(Platform.OS=='ios')&&
-       <RoundedButton
-       onPress={()=>{}}
-       buttonName='Sign in with Apple'
-       imageUrl={ImagePaths.apple}
-       labelStyle={styles.appleLabel}
-       iconStyle={styles.appleIcon}
-       containerStyle={styles.appleContainer}/>}
-       </ScrollView>
-       <TouchableOpacity style={{marginVertical:10}}>
-        <Text style={{
-          fontFamily:fontFamily.medium,
-          fontSize:14,
-          color:'#7D7D7D',
-          textTransform:'uppercase',
-          textAlign:'center'
-        }}>Skip</Text>
-       </TouchableOpacity>
-       <Text style={{
-          fontFamily:fontFamily.medium,
-          fontSize:14,
-          color:'#000000',
-          textAlign:'center'
-        }}>By continuing you agree to the</Text>
-        <View style={{
-          flexDirection:'row',alignItems:'center',
-          justifyContent:'center',marginVertical:10}}>
+    <ScrollView
+      bounces={false}
+      showsVerticalScrollIndicator={false}
+      style={styles.container}
+    >
+      <Image
+        source={ImagePaths.signupLayout}
+        style={styles.backgroundImage}
+      />
+      <Image
+        source={ImagePaths.logo}
+        style={styles.logoImage}
+      />
+      <View style={styles.contentContainer}>
+        <Text style={styles.title}>
+          W<Text style={styles.subtitle}>elcome</Text>
+        </Text>
+        <Text style={styles.subtitleText}>
+          Choose one of the below to get started
+        </Text>
+        <ScrollView>
+           <RoundedButton
+            onPress={()=>{}}
+            buttonName='Mobile Number'
+            imageUrl={ImagePaths.smartphone}
+            labelStyle={styles.buttonText}
+            iconStyle={styles.smartPhoneIcon}
+            containerStyle={styles.mobileContainer}
+           />
+            <RoundedButton
+            onPress={()=>{}}
+            buttonName='Email Address'
+            imageUrl={ImagePaths.email}
+            containerStyle={styles.emailContainer}
+            labelStyle={styles.buttonText}
+            iconStyle={styles.emailIcon}/>
+            <RoundedButton
+            onPress={()=>{}}
+            buttonName='Sign in with Google'
+            imageUrl={ImagePaths.google}
+            containerStyle={styles.googleContainer}
+            labelStyle={styles.googleLabel}
+            iconStyle={styles.ggogleIcon}/>
+            <RoundedButton
+            onPress={()=>{}}
+            buttonName='Sign in with Facebook'
+            imageUrl={ImagePaths.facebook}
+            labelStyle={styles.facebookLabel}
+            iconStyle={styles.facebookIcon}
+            containerStyle={styles.facebookContainer}/>
+            {!(Platform.OS=='ios')&&
+            <RoundedButton
+            onPress={()=>{}}
+            buttonName='Sign in with Apple'
+            imageUrl={ImagePaths.apple}
+            labelStyle={styles.appleLabel}
+            iconStyle={styles.appleIcon}
+            containerStyle={styles.appleContainer}/>}
+        </ScrollView>
+        <TouchableOpacity style={styles.skipButton}>
+          <Text style={styles.skipButtonText}>Skip</Text>
+        </TouchableOpacity>
+        <Text style={styles.agreementText}>
+          By continuing you agree to the
+        </Text>
+        <View style={styles.termsContainer}>
           <TouchableOpacity>
-            <Text style={{
-          fontFamily:fontFamily.regular,
-          fontSize:13,
-          color:'#328AEE',
-          textDecorationLine:'underline'
-        }}>Terms & Conditions</Text>
+            <Text style={styles.termsLink}>Terms & Conditions</Text>
           </TouchableOpacity>
-          <Text style={{
-          fontFamily:fontFamily.regular,
-          fontSize:13,
-          color:'#09182B',
-          marginHorizontal:5
-        }}>&</Text>
+          <Text style={styles.andText}>&</Text>
           <TouchableOpacity>
-            <Text style={{
-          fontFamily:fontFamily.regular,
-          fontSize:13,
-          color:'#328AEE',
-          textDecorationLine:'underline'
-        }}>Privacy Policy</Text>
+            <Text style={styles.termsLink}>Privacy Policy</Text>
           </TouchableOpacity>
         </View>
-        <View style={{marginVertical:15}}>
-          <Text  style={{
-          fontFamily:fontFamily.regular,
-          fontSize:11,
-          color:'#000000',
-          textAlign:'center'
-        }}>
-          Your privacy is respected and protected. All personal information is used for astrological calculations only.
+        <View style={styles.privacyTextContainer}>
+          <Text style={styles.privacyText}>
+            Your privacy is respected and protected. All personal information is used for astrological calculations only.
           </Text>
         </View>
-    </View>
-    <Image 
-    source={ImagePaths.bottomLayout}
-    style={{
-      width:171,
-      height:51,
-      resizeMode:'stretch',
-      alignSelf:'center'
-    }}
-    ></Image>
+      </View>
+      <Image
+        source={ImagePaths.bottomLayout}
+        style={styles.bottomImage}
+      />
     </ScrollView>
   );
 };
 
 export default WelcomeScreen;
+
 const styles = StyleSheet.create({
-  buttonText: {
+  container: {
+    flex: 1,
+    backgroundColor: '#F7F6F8',
+  },
+  backgroundImage: {
+    width: 314,
+    height: 175,
+    resizeMode: 'stretch',
+    alignSelf: 'flex-end',
+  },
+  logoImage: {
+    width: 160,
+    height: 52,
+    position: 'absolute',
+    top: 94,
+    left: 28,
+  },
+  contentContainer: {
+    marginHorizontal: 30,
+  },
+  title: {
+    fontFamily: fontFamily.bold,
+    fontSize: 28,
+    color: '#292929',
+  },
+  subtitle: {
+    fontFamily: fontFamily.light,
+    fontSize: 28,
+    color: '#292929',
+  },
+  subtitleText: {
+    fontFamily: fontFamily.regular,
+    fontSize: 15,
+    color: '#292929',
+    marginVertical: 9,
+  },
+   buttonText: {
     fontSize: 17,
     color: '#FFFFFF', 
     fontFamily:fontFamily.regular
@@ -243,5 +226,58 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-  }
+  },
+
+
+  skipButton: {
+    marginVertical: 10,
+  },
+  skipButtonText: {
+    fontFamily: fontFamily.medium,
+    fontSize: 14,
+    color: '#7D7D7D',
+    textTransform: 'uppercase',
+    textAlign: 'center',
+  },
+  agreementText: {
+    fontFamily: fontFamily.medium,
+    fontSize: 14,
+    color: '#000000',
+    textAlign: 'center',
+  },
+  termsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 10,
+  },
+  termsLink: {
+    fontFamily: fontFamily.regular,
+    fontSize: 13,
+    color: '#328AEE',
+    textDecorationLine: 'underline',
+  },
+  andText: {
+    fontFamily: fontFamily.regular,
+    fontSize: 13,
+    color: '#09182B',
+    marginHorizontal: 5,
+  },
+  privacyTextContainer: {
+    marginVertical: 15,
+  },
+  privacyText: {
+    fontFamily: fontFamily.regular,
+    fontSize: 11,
+    color: '#000000',
+    textAlign: 'center',
+  },
+  bottomImage: {
+    width: 171,
+    height: 51,
+    resizeMode: 'stretch',
+    alignSelf: 'center',
+  },
 });
+
+

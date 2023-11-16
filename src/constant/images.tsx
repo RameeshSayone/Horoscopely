@@ -7,6 +7,7 @@ enum ImagePaths {
     apple=require('../../assets/images/apple.png'),
     email=require('../../assets/images/email.png'),
     bottomLayout=require('../../assets/images/bottomLayout.png'),
+    close=require('../../assets/images/close.png'),
   }
 export { ImagePaths };
   

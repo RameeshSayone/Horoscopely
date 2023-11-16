@@ -3,12 +3,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import WelcomeScreen from '../screens/WelcomeScreen'; // Import your screen components
+import WelcomeScreen from '../screens/WelcomeScreen'; 
+import TermsAndConditionScreen from '../screens/TermsAndConditionScreen';
+import PrivacyPolicyScreen from '../screens/PrivacyPolicyScreen';
 import screenName from '../constant/screenName';
-
-export type RootStackParamList = {
-  WELCOME: undefined; 
-};
+import { RootStackParamList } from '../interfaces/common';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -20,6 +19,8 @@ const Navigation: React.FC = () => {
         headerShown: false,
       }}>
         <Stack.Screen name={screenName.WELCOME} component={WelcomeScreen} />
+        <Stack.Screen name={screenName.TERMS_AND_CONDITION} component={TermsAndConditionScreen} />
+        <Stack.Screen name={screenName.PRIVACY_POLICY} component={PrivacyPolicyScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

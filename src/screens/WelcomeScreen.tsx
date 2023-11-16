@@ -11,8 +11,18 @@ import {
 import { ImagePaths } from '../constant/images';
 import { fontFamily } from '../constant/fontFamily';
 import RoundedButton from '../components/RoundedButton';
+import { useNavigation } from '@react-navigation/native';
+import screenName from '../constant/screenName';
+import { RootStackParamList } from '../interfaces/common';
 
 const WelcomeScreen: React.FC = () => {
+  const navigation = useNavigation<RootStackParamList>();
+  const onClickTermsAndCondition = (): void => {
+    navigation.navigate(screenName.TERMS_AND_CONDITION);
+  };
+  const onClickPrivacyPolicy = (): void => {
+    navigation.navigate(screenName.PRIVACY_POLICY);
+  };
   return (
     <ScrollView
       bounces={false}
@@ -34,7 +44,10 @@ const WelcomeScreen: React.FC = () => {
         <Text style={styles.subtitleText}>
           Choose one of the below to get started
         </Text>
-        <ScrollView>
+        <ScrollView
+        bounces={false}
+        showsVerticalScrollIndicator={false}
+        >
            <RoundedButton
             onPress={()=>{}}
             buttonName='Mobile Number'
@@ -64,7 +77,7 @@ const WelcomeScreen: React.FC = () => {
             labelStyle={styles.facebookLabel}
             iconStyle={styles.facebookIcon}
             containerStyle={styles.facebookContainer}/>
-            {!(Platform.OS=='ios')&&
+            {(Platform.OS=='ios')&&
             <RoundedButton
             onPress={()=>{}}
             buttonName='Sign in with Apple'
@@ -80,11 +93,13 @@ const WelcomeScreen: React.FC = () => {
           By continuing you agree to the
         </Text>
         <View style={styles.termsContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity
+          onPress={()=>{onClickTermsAndCondition()}}>
             <Text style={styles.termsLink}>Terms & Conditions</Text>
           </TouchableOpacity>
           <Text style={styles.andText}>&</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+          onPress={()=>{onClickPrivacyPolicy()}}>
             <Text style={styles.termsLink}>Privacy Policy</Text>
           </TouchableOpacity>
         </View>

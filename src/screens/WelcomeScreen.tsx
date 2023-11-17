@@ -23,6 +23,9 @@ const WelcomeScreen: React.FC = () => {
   const onClickPrivacyPolicy = (): void => {
     navigation.navigate(screenName.PRIVACY_POLICY);
   };
+  const onClickMobileNumber = (): void => {
+    navigation.navigate(screenName.MOBILE_NUMBER_SIGNUP);
+  };
   return (
     <ScrollView
       bounces={false}
@@ -49,7 +52,7 @@ const WelcomeScreen: React.FC = () => {
         showsVerticalScrollIndicator={false}
         >
            <RoundedButton
-            onPress={()=>{}}
+            onPress={()=>{onClickMobileNumber()}}
             buttonName='Mobile Number'
             imageUrl={ImagePaths.smartphone}
             labelStyle={styles.buttonText}

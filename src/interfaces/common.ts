@@ -7,4 +7,5 @@ export type RootStackParamList = {
     WELCOME: undefined;
     TERMS_AND_CONDITION:undefined;
     PRIVACY_POLICY:undefined;
+    MOBILE_NUMBER_SIGNUP:undefined;
   };

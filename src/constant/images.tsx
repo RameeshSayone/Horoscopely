@@ -8,6 +8,8 @@ enum ImagePaths {
     email=require('../../assets/images/email.png'),
     bottomLayout=require('../../assets/images/bottomLayout.png'),
     close=require('../../assets/images/close.png'),
+    hsLayout=require('../../assets/images/HSLayout.png'),
+    hsBottomLayout=require('../../assets/images/HSBottomLayout.png'),
   }
 export { ImagePaths };
   

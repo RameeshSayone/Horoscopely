@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, Image, View, StyleSheet } from 'react-native';
+import { styles } from './styles';
 
 interface RoundedButtonProps {
   onPress: () => void;
@@ -22,23 +23,6 @@ const RoundedButton: React.FC<RoundedButtonProps> = ({ onPress, buttonName, imag
   );
 };
 
-const styles = StyleSheet.create({
-  buttonContainer: {
-    borderRadius: 30,
-    overflow: 'hidden',
-    marginVertical:15,
-    padding:15
-  },
-  innerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  image: {
-    marginRight: 10,
-   
-    resizeMode:'contain'
-  },
-});
+
 
 export default RoundedButton;

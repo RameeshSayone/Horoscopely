@@ -23,7 +23,10 @@ const WelcomeScreen: React.FC = () => {
     navigation.navigate(screenName.PRIVACY_POLICY);
   };
   const onClickMobileNumber = (): void => {
-    navigation.navigate(screenName.MOBILE_NUMBER_SIGNUP);
+    navigation.navigate(screenName.SIGN_UP_WITH_PHONE);
+  };
+  const onClickEmail = (): void => {
+    navigation.navigate(screenName.SIGN_UP_WITH_EMAIL);
   };
   return (
     <ScrollView
@@ -59,7 +62,7 @@ const WelcomeScreen: React.FC = () => {
             containerStyle={styles.mobileContainer}
            />
             <RoundedButton
-            onPress={()=>{}}
+            onPress={()=>{onClickEmail()}}
             buttonName='Email Address'
             imageUrl={ImagePaths.email}
             containerStyle={styles.emailContainer}

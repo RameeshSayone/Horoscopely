@@ -10,6 +10,7 @@ enum ImagePaths {
     close=require('../../assets/images/close.png'),
     hsLayout=require('../../assets/images/HSLayout.png'),
     hsBottomLayout=require('../../assets/images/HSBottomLayout.png'),
+    downArrow=require('../../assets/images/downArrow.png'),
   }
 export { ImagePaths };
   

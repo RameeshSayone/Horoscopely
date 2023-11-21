@@ -3,12 +3,13 @@ import { TouchableOpacity, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 
-interface SignupButtonProps {
+interface GradientButtonProps {
   onPress: () => void;
   containerStyle: any;
+  buttonName:string;
 }
 
-const SignupButton: React.FC<SignupButtonProps> = ({ onPress, containerStyle }) => {
+const GradientButton: React.FC<GradientButtonProps> = ({ onPress, containerStyle,buttonName }) => {
   return (
     <TouchableOpacity style={[styles.buttonContainer, containerStyle]} onPress={onPress}>
       <LinearGradient
@@ -18,14 +19,14 @@ const SignupButton: React.FC<SignupButtonProps> = ({ onPress, containerStyle }) 
         style={styles.buttonGradient}
       >
         <View style={styles.innerContainer}>
-          <Text style={styles.labelStyle}>Sign Up</Text>
+          <Text style={styles.labelStyle}>{buttonName}</Text>
         </View>
       </LinearGradient>
     </TouchableOpacity>
   );
 };
 
-export default SignupButton;
+export default GradientButton;
 
 
 

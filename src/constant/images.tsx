@@ -11,6 +11,7 @@ enum ImagePaths {
     hsLayout=require('../../assets/images/HSLayout.png'),
     hsBottomLayout=require('../../assets/images/HSBottomLayout.png'),
     downArrow=require('../../assets/images/downArrow.png'),
+    registerFormTopLayout=require('../../assets/images/registerFormTopLayout.png'),
   }
 export { ImagePaths };
   

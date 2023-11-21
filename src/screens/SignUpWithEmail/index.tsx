@@ -8,10 +8,11 @@ import {
 } from 'react-native';
 import { ImagePaths } from '../../constant/images';
 import TextBox from '../../components/TextBox';
-import SignupButton from '../../components/SignupButton';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../../interfaces/common';
 import { styles } from './styles';
+import screenName from '../../constant/screenName';
+import GradientButton from '../../components/GradientButton';
 
 const EmailSignupScreen: React.FC = () => {
   const navigation = useNavigation<RootStackParamList>();
@@ -22,7 +23,7 @@ const EmailSignupScreen: React.FC = () => {
   };
 
   const onPressSignup = (): void => {
-    // Add your signup logic here
+    navigation.navigate(screenName.REGISTER_NAME_FORM)
   };
 
   return (
@@ -53,7 +54,7 @@ const EmailSignupScreen: React.FC = () => {
           </View>
 
           <View style={styles.buttonWrapper}>
-            <SignupButton onPress={onPressSignup} containerStyle={styles.buttonContainer} />
+            <GradientButton  buttonName={"Sign Up"} onPress={onPressSignup} containerStyle={styles.buttonContainer} />
           </View>
 
           <TouchableOpacity

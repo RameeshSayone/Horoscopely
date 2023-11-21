@@ -9,4 +9,5 @@ export type RootStackParamList = {
     PRIVACY_POLICY:undefined;
     SIGN_UP_WITH_PHONE:undefined;
     SIGN_UP_WITH_EMAIL:undefined;
+    REGISTER_NAME_FORM:undefined;
   };

@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     borderRadius: 30,
     marginVertical: 15,
-    zIndex: 0,
   },
   innerContainer: {
     flexDirection: 'row',

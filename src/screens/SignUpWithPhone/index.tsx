@@ -9,10 +9,11 @@ import {
 import { ImagePaths } from '../../constant/images';
 import TextBox from '../../components/TextBox';
 import CustomDropdown from '../../components/CustomDropdown';
-import SignupButton from '../../components/SignupButton';
+import GradientButton from '../../components/GradientButton';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../../interfaces/common';
 import { styles } from './styles';
+import screenName from '../../constant/screenName';
 
 const MobileSignupScreen: React.FC = () => {
   const navigation = useNavigation<RootStackParamList>();
@@ -23,7 +24,7 @@ const MobileSignupScreen: React.FC = () => {
   };
 
   const onPressSignup = (): void => {
-    // Add your signup logic here
+    navigation.navigate(screenName.REGISTER_NAME_FORM)
   };
 
   const options = ['+91', '+000', '+111'];
@@ -61,7 +62,7 @@ const MobileSignupScreen: React.FC = () => {
           </View>
 
           <View style={styles.buttonWrapper}>
-            <SignupButton onPress={onPressSignup} containerStyle={styles.buttonContainer} />
+            <GradientButton  buttonName={"Sign Up"} onPress={onPressSignup} containerStyle={styles.buttonContainer} />
           </View>
 
           <TouchableOpacity

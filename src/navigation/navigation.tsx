@@ -6,7 +6,7 @@ import TermsAndConditionScreen from '../screens/TermsAndConditionScreen';
 import PrivacyPolicyScreen from '../screens/PrivacyPolicyScreen';
 import SignUpWithPhone from '../screens/SignUpWithPhone';
 import SignUpWithEmail from '../screens/SignUpWithEmail';
-import RegisterNameForm from '../screens/RegisterNameForm';
+import RegisterForm from '../screens/RegisterForm';
 import screenName from '../constant/screenName';
 import { RootStackParamList } from '../interfaces/common';
 
@@ -24,7 +24,7 @@ const Navigation: React.FC = () => {
         <Stack.Screen name={screenName.PRIVACY_POLICY} component={PrivacyPolicyScreen} />
         <Stack.Screen name={screenName.SIGN_UP_WITH_PHONE} component={SignUpWithPhone} />
         <Stack.Screen name={screenName.SIGN_UP_WITH_EMAIL} component={SignUpWithEmail} />
-        <Stack.Screen name={screenName.REGISTER_NAME_FORM} component={RegisterNameForm} />
+        <Stack.Screen name={screenName.REGISTER_FORM} component={RegisterForm} />
       </Stack.Navigator>
     </NavigationContainer>
   );

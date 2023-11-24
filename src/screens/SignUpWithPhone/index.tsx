@@ -24,7 +24,7 @@ const MobileSignupScreen: React.FC = () => {
   };
 
   const onPressSignup = (): void => {
-    navigation.navigate(screenName.REGISTER_NAME_FORM)
+    navigation.navigate(screenName.REGISTER_FORM)
   };
 
   const options = ['+91', '+000', '+111'];

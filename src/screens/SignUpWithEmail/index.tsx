@@ -23,7 +23,7 @@ const EmailSignupScreen: React.FC = () => {
   };
 
   const onPressSignup = (): void => {
-    navigation.navigate(screenName.REGISTER_NAME_FORM)
+    navigation.navigate(screenName.REGISTER_FORM)
   };
 
   return (

@@ -22,6 +22,12 @@ const WelcomeScreen: React.FC = () => {
   const onClickPrivacyPolicy = (): void => {
     navigation.navigate(screenName.PRIVACY_POLICY);
   };
+  const onClickMobileNumber = (): void => {
+    navigation.navigate(screenName.SIGN_UP_WITH_PHONE);
+  };
+  const onClickEmail = (): void => {
+    navigation.navigate(screenName.SIGN_UP_WITH_EMAIL);
+  };
   return (
     <ScrollView
       bounces={false}
@@ -48,7 +54,7 @@ const WelcomeScreen: React.FC = () => {
         showsVerticalScrollIndicator={false}
         >
            <RoundedButton
-            onPress={()=>{}}
+            onPress={()=>{onClickMobileNumber()}}
             buttonName='Mobile Number'
             imageUrl={ImagePaths.smartphone}
             labelStyle={styles.buttonText}
@@ -56,7 +62,7 @@ const WelcomeScreen: React.FC = () => {
             containerStyle={styles.mobileContainer}
            />
             <RoundedButton
-            onPress={()=>{}}
+            onPress={()=>{onClickEmail()}}
             buttonName='Email Address'
             imageUrl={ImagePaths.email}
             containerStyle={styles.emailContainer}

@@ -13,6 +13,10 @@ enum ImagePaths {
     downArrow=require('../../assets/images/downArrow.png'),
     registerFormTopLayout=require('../../assets/images/registerFormTopLayout.png'),
     edit=require('../../assets/images/edit.png'),
+    loaderBg=require('../../assets/images/loaderBg.png'),
+    loaderLogo=require('../../assets/images/loaderLogo.png'),
+    loaderIcon=require('../../assets/images/loaderIcon.png'),
+    
   } 
 export { ImagePaths };
   

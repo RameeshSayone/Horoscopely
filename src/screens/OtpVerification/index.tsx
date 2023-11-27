@@ -7,6 +7,7 @@ import { RootStackParamList } from '../../interfaces/common';
 import OTPInput from '../../components/OtpInput';
 import CustomPopup from '../../components/CustomPopup';
 import styles from './styles';
+import screenName from '../../constant/screenName';
 
 
 const OtpVerification: React.FC = () => {
@@ -38,6 +39,7 @@ const OtpVerification: React.FC = () => {
 
   const onCloseMobilePopup = (): void => {
     setIsMobilePopup(false);
+    navigation.navigate(screenName.LOADER_SCREEN)
   };
 
   return (

@@ -5,5 +5,6 @@ const enum  screenName {
     SIGN_UP_WITH_PHONE='SIGN_UP_WITH_PHONE',
     SIGN_UP_WITH_EMAIL='SIGN_UP_WITH_EMAIL',
     REGISTER_FORM='REGISTER_FORM',
+    OTP_VERIFICATION='OTP_VERIFICATION'
   }
 export default screenName

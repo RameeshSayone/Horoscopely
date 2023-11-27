@@ -10,4 +10,5 @@ export type RootStackParamList = {
     SIGN_UP_WITH_PHONE:undefined;
     SIGN_UP_WITH_EMAIL:undefined;
     REGISTER_FORM:undefined;
+    OTP_VERIFICATION:undefined;
   };

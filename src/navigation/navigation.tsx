@@ -7,6 +7,7 @@ import PrivacyPolicyScreen from '../screens/PrivacyPolicyScreen';
 import SignUpWithPhone from '../screens/SignUpWithPhone';
 import SignUpWithEmail from '../screens/SignUpWithEmail';
 import RegisterForm from '../screens/RegisterForm';
+import OtpVerification from '../screens/OtpVerification';
 import screenName from '../constant/screenName';
 import { RootStackParamList } from '../interfaces/common';
 
@@ -19,12 +20,14 @@ const Navigation: React.FC = () => {
       screenOptions={{
         headerShown: false,
       }}>
+        <Stack.Screen name={screenName.OTP_VERIFICATION} component={OtpVerification} />
         <Stack.Screen name={screenName.WELCOME} component={WelcomeScreen} />
         <Stack.Screen name={screenName.TERMS_AND_CONDITION} component={TermsAndConditionScreen} />
         <Stack.Screen name={screenName.PRIVACY_POLICY} component={PrivacyPolicyScreen} />
         <Stack.Screen name={screenName.SIGN_UP_WITH_PHONE} component={SignUpWithPhone} />
         <Stack.Screen name={screenName.SIGN_UP_WITH_EMAIL} component={SignUpWithEmail} />
         <Stack.Screen name={screenName.REGISTER_FORM} component={RegisterForm} />
+        {/* <Stack.Screen name={screenName.OTP_VERIFICATION} component={OtpVerification} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

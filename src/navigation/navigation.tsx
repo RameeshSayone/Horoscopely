@@ -9,6 +9,7 @@ import SignUpWithEmail from '../screens/SignUpWithEmail';
 import RegisterForm from '../screens/RegisterForm';
 import OtpVerification from '../screens/OtpVerification';
 import LoaderScreen from '../screens/LoaderScreen';
+import Dashboard from '../screens/Dashboard';
 import screenName from '../constant/screenName';
 import { RootStackParamList } from '../interfaces/common';
 
@@ -21,6 +22,7 @@ const Navigation: React.FC = () => {
       screenOptions={{
         headerShown: false,
       }}>
+        <Stack.Screen name={screenName.DASHBOARD} component={Dashboard} />
         <Stack.Screen name={screenName.WELCOME} component={WelcomeScreen} />
         <Stack.Screen name={screenName.TERMS_AND_CONDITION} component={TermsAndConditionScreen} />
         <Stack.Screen name={screenName.PRIVACY_POLICY} component={PrivacyPolicyScreen} />

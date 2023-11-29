@@ -16,7 +16,16 @@ enum ImagePaths {
     loaderBg=require('../../assets/images/loaderBg.png'),
     loaderLogo=require('../../assets/images/loaderLogo.png'),
     loaderIcon=require('../../assets/images/loaderIcon.png'),
-    
+    home=require('../../assets/images/home.png'),
+    more=require('../../assets/images/more.png'),
+    compatibility=require('../../assets/images/compatibility.png'),
+    remedies=require('../../assets/images/remedies.png'),
+    bottomTabBg=require('../../assets/images/bottomTabBg.png'),
+    bell=require('../../assets/images/bell.png'),
+    aries=require('../../assets/images/aries.png'),
+    calendar=require('../../assets/images/calendar.png'),
+    sun=require('../../assets/images/sun.png'),
+    share=require('../../assets/images/share.png'),
   } 
 export { ImagePaths };
   

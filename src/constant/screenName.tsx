@@ -7,6 +7,7 @@ const enum  screenName {
     REGISTER_FORM='REGISTER_FORM',
     OTP_VERIFICATION='OTP_VERIFICATION',
     LOADER_SCREEN='LOADER_SCREEN',
+    DASHBOARD='DASHBOARD',
 
   }
 export default screenName

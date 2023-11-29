@@ -12,4 +12,8 @@ export type RootStackParamList = {
     REGISTER_FORM:undefined;
     OTP_VERIFICATION:undefined;
     LOADER_SCREEN:undefined;
+    DASHBOARD:undefined;
   };
+export type BottomTabStackParamList={
+
+}

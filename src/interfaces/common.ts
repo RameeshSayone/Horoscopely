@@ -10,4 +10,13 @@ export type RootStackParamList = {
     SIGN_UP_WITH_PHONE:undefined;
     SIGN_UP_WITH_EMAIL:undefined;
     REGISTER_FORM:undefined;
+    OTP_VERIFICATION:undefined;
+    LOADER_SCREEN:undefined;
+    DASHBOARD:undefined;
+    NOTIFICATION:undefined;
+    SETTINGS:undefined;
+    SELECT_DATE_SCREEN:undefined;
+    SELECT_TIME_SCREEN:undefined;
+    FOCUS_OF_THE_DAY:undefined;
+    CALENDAR_ADVICE:undefined;
   };

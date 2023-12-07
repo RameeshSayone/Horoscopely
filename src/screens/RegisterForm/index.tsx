@@ -10,6 +10,7 @@ import DatePickerComponent from '../../components/DatePickerComponent';
 import RadioButtonGroup from '../../components/RadioButtonGroup';
 import SwitchToggle from 'react-native-switch-toggle';
 import { styles } from './styles';
+import screenName from '../../constant/screenName';
 
 const RegisterForm: React.FC = () => {
   const navigation = useNavigation<RootStackParamList>();
@@ -52,7 +53,10 @@ const RegisterForm: React.FC = () => {
   };
 
   const onPressContinue = (): void => {
+    if(pageNumber<7)
     setPageNumber(pageNumber + 1);
+    else
+    navigation.navigate(screenName.OTP_VERIFICATION)
   };
   const handleDateChange = (date: Date) => {
     console.log('Selected Date:', date);

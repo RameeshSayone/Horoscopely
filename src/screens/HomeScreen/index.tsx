@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   SafeAreaView,
+  TouchableOpacity,
 } from 'react-native';
 import { ImagePaths } from '../../constant/images';
 import LinearGradient from 'react-native-linear-gradient';
@@ -14,8 +15,12 @@ import RingChart from '../../components/RingChart';
 import DayPicker from '../../components/DayPicker';
 import { screenSize } from '../../constant/screenSize';
 import { styles } from './styles';
+import { useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../../interfaces/common';
+import screenName from '../../constant/screenName';
 
 const HomeScreen: React.FC = () => {
+  const navigation = useNavigation<RootStackParamList>();
   const options = ['Today', 'Tomorrow', 'Yesterday'];
   const [isDropdownVisible, setDropdownVisibility] = useState(false);
 
@@ -35,7 +40,9 @@ const HomeScreen: React.FC = () => {
           <View style={styles.logContainer}>
             <Image source={ImagePaths.logo} style={styles.logo} />
             <View style={styles.notificationSec}>
-              <Image source={ImagePaths.bell} style={styles.bell} />
+              <TouchableOpacity onPress={()=>{navigation.navigate(screenName.NOTIFICATION)}}>
+                <Image source={ImagePaths.bell} style={styles.bell} />
+              </TouchableOpacity>
               <View style={styles.badgeSec}>
                 <Text style={styles.badgeCount}>3</Text>
               </View>

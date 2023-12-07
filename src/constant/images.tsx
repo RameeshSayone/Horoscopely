@@ -26,6 +26,9 @@ enum ImagePaths {
     calendar=require('../../assets/images/calendar.png'),
     sun=require('../../assets/images/sun.png'),
     share=require('../../assets/images/share.png'),
+    settings=require('../../assets/images/settings.png'),
+    arrow=require('../../assets/images/arrow.png'),
+    cross=require('../../assets/images/cross.png'),
   } 
 export { ImagePaths };
   

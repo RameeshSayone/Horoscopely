@@ -10,6 +10,12 @@ import RegisterForm from '../screens/RegisterForm';
 import OtpVerification from '../screens/OtpVerification';
 import LoaderScreen from '../screens/LoaderScreen';
 import Dashboard from '../screens/Dashboard';
+import Notification from '../screens/Notification';
+import Settings from '../screens/Settings';
+import SelectDateScreen from '../screens/SelectDateScreen';
+import SelectTimeScreen from '../screens/SelectTimeScreen';
+import FocusOfTheDay from '../screens/FocusOfTheDay';
+import CalendarAdvice from '../screens/CalendarAdvice';
 import screenName from '../constant/screenName';
 import { RootStackParamList } from '../interfaces/common';
 
@@ -31,6 +37,12 @@ const Navigation: React.FC = () => {
         <Stack.Screen name={screenName.REGISTER_FORM} component={RegisterForm} />
         <Stack.Screen name={screenName.LOADER_SCREEN} component={LoaderScreen} />
         <Stack.Screen name={screenName.OTP_VERIFICATION} component={OtpVerification} />
+        <Stack.Screen name={screenName.NOTIFICATION} component={Notification} />
+        <Stack.Screen name={screenName.SETTINGS} component={Settings}/>
+        <Stack.Screen name={screenName.SELECT_DATE_SCREEN} component={SelectDateScreen} />
+        <Stack.Screen name={screenName.SELECT_TIME_SCREEN} component={SelectTimeScreen} />
+        <Stack.Screen name={screenName.FOCUS_OF_THE_DAY} component={FocusOfTheDay} />
+        <Stack.Screen name={screenName.CALENDAR_ADVICE} component={CalendarAdvice} />
       </Stack.Navigator>
     </NavigationContainer>
   );

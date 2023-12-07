@@ -13,7 +13,10 @@ export type RootStackParamList = {
     OTP_VERIFICATION:undefined;
     LOADER_SCREEN:undefined;
     DASHBOARD:undefined;
+    NOTIFICATION:undefined;
+    SETTINGS:undefined;
+    SELECT_DATE_SCREEN:undefined;
+    SELECT_TIME_SCREEN:undefined;
+    FOCUS_OF_THE_DAY:undefined;
+    CALENDAR_ADVICE:undefined;
   };
-export type BottomTabStackParamList={
-
-}

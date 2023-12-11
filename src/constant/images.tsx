@@ -39,6 +39,13 @@ enum ImagePaths {
     subcription=require('../../assets/images/subcription.png'),
     termsAndPrivacy=require('../../assets/images/termsAndPrivacy.png'),
     viewReports=require('../../assets/images/viewReports.png'),
+    hashBg=require('../../assets/images/hashBg.png'),
+    profession=require('../../assets/images/profession.png'),
+    travel=require('../../assets/images/travel.png'),
+    luck=require('../../assets/images/luck.png'),
+    health=require('../../assets/images/health.png'),
+    personalLife=require('../../assets/images/personalLife.png'),
+    emotion=require('../../assets/images/emotion.png'),
   } 
 export { ImagePaths };
   

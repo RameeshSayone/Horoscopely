@@ -19,4 +19,5 @@ export type RootStackParamList = {
     SELECT_TIME_SCREEN:undefined;
     FOCUS_OF_THE_DAY:undefined;
     CALENDAR_ADVICE:undefined;
+    MANAGE_INTEREST:undefined;
   };

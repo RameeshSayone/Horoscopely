@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Text, ImageBackground, Image, FlatList, TouchableOpacity, ImageSourcePropType } from 'react-native';
 import { ImagePaths } from '../../constant/images';
 import { styles } from './styles';
+import { RootStackParamList } from '../../interfaces/common';
+import { useNavigation } from '@react-navigation/native';
+import screenName from '../../constant/screenName';
 
 interface Card {
   id: number;
@@ -77,8 +80,11 @@ const data = [
 ];
 
 const More: React.FC = () => {
+  const navigation = useNavigation<RootStackParamList>();
   const renderItem = ({ item }: { item: Card }) => (
-    <TouchableOpacity style={styles.itemContainer}>
+    <TouchableOpacity 
+    onPress={()=>navigation.navigate(screenName.MANAGE_INTEREST)}
+    style={styles.itemContainer}>
       <View style={styles.itemContent}>
         <Image source={item.logo} style={styles.itemImage} />
         <Text style={styles.itemText}>{item.title}</Text>

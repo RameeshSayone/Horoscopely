@@ -28,7 +28,7 @@ const Navigation: React.FC = () => {
       screenOptions={{
         headerShown: false,
       }}>
-        <Stack.Screen name={screenName.DASHBOARD} component={Dashboard} />
+       
         <Stack.Screen name={screenName.WELCOME} component={WelcomeScreen} />
         <Stack.Screen name={screenName.TERMS_AND_CONDITION} component={TermsAndConditionScreen} />
         <Stack.Screen name={screenName.PRIVACY_POLICY} component={PrivacyPolicyScreen} />
@@ -37,6 +37,7 @@ const Navigation: React.FC = () => {
         <Stack.Screen name={screenName.REGISTER_FORM} component={RegisterForm} />
         <Stack.Screen name={screenName.LOADER_SCREEN} component={LoaderScreen} />
         <Stack.Screen name={screenName.OTP_VERIFICATION} component={OtpVerification} />
+        <Stack.Screen name={screenName.DASHBOARD} component={Dashboard} />
         <Stack.Screen name={screenName.NOTIFICATION} component={Notification} />
         <Stack.Screen name={screenName.SETTINGS} component={Settings}/>
         <Stack.Screen name={screenName.SELECT_DATE_SCREEN} component={SelectDateScreen} />

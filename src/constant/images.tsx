@@ -29,6 +29,16 @@ enum ImagePaths {
     settings=require('../../assets/images/settings.png'),
     arrow=require('../../assets/images/arrow.png'),
     cross=require('../../assets/images/cross.png'),
+    info=require('../../assets/images/info.png'),
+    faq=require('../../assets/images/faq.png'),
+    inviteFriends=require('../../assets/images/inviteFriends.png'),
+    help=require('../../assets/images/help.png'),
+    manageInterest=require('../../assets/images/manageInterest.png'),
+    managePayment=require('../../assets/images/managePayment.png'),
+    profile=require('../../assets/images/profile.png'),
+    subcription=require('../../assets/images/subcription.png'),
+    termsAndPrivacy=require('../../assets/images/termsAndPrivacy.png'),
+    viewReports=require('../../assets/images/viewReports.png'),
   } 
 export { ImagePaths };
   

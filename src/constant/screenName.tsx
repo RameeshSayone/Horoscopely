@@ -15,5 +15,6 @@ const enum  screenName {
     FOCUS_OF_THE_DAY='FOCUS_OF_THE_DAY',
     CALENDAR_ADVICE='CALENDAR_ADVICE',
     MANAGE_INTEREST='MANAGE_INTEREST',
+    VIEW_REPORTS='VIEW_REPORTS'
   }
 export default screenName

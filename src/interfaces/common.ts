@@ -20,4 +20,5 @@ export type RootStackParamList = {
     FOCUS_OF_THE_DAY:undefined;
     CALENDAR_ADVICE:undefined;
     MANAGE_INTEREST:undefined;
+    VIEW_REPORTS:undefined;
   };

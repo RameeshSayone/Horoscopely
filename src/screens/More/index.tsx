@@ -81,9 +81,21 @@ const data = [
 
 const More: React.FC = () => {
   const navigation = useNavigation<RootStackParamList>();
+  const onPressItem=(title:string)=>{
+    switch(title){
+      case 'Manage Interest':
+        navigation.navigate(screenName.MANAGE_INTEREST);
+        break;
+      case 'View Reports':
+        navigation.navigate(screenName.VIEW_REPORTS);
+        break;
+      default :
+      navigation.navigate(screenName.VIEW_REPORTS);
+    }
+  }
   const renderItem = ({ item }: { item: Card }) => (
     <TouchableOpacity 
-    onPress={()=>navigation.navigate(screenName.MANAGE_INTEREST)}
+    onPress={()=>onPressItem(item.title)}
     style={styles.itemContainer}>
       <View style={styles.itemContent}>
         <Image source={item.logo} style={styles.itemImage} />

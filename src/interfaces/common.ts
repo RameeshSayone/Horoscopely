@@ -21,4 +21,5 @@ export type RootStackParamList = {
     CALENDAR_ADVICE:undefined;
     MANAGE_INTEREST:undefined;
     VIEW_REPORTS:undefined;
+    VIEW_REPORTS_DETAILS:undefined;
   };

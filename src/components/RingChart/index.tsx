@@ -7,9 +7,11 @@ import { styles } from './styles';
 interface RingChartProps {
   data: number[]; 
   labels: string[];
+  labelColor:string;
+  chartColor:string;
 }
 
-const RingChart: React.FC<RingChartProps> = ({ data, labels }) => {
+const RingChart: React.FC<RingChartProps> = ({ data, labels ,labelColor,chartColor}) => {
   const totalPercentage = 100;
 
   return (
@@ -28,17 +30,17 @@ const RingChart: React.FC<RingChartProps> = ({ data, labels }) => {
           backgroundGradientTo: 'transparent',
           backgroundGradientFromOpacity: 0,
           backgroundGradientToOpacity: 0,
-          color: (opacity = 1) => `rgba(132, 202, 255, ${opacity})`,
+          color: () => chartColor,
         }}
         hideLegend={true}
         style={styles.chart}
       />
       <View style={styles.centeredText}>
-        <Text style={styles.percentText}>{`${data[0]}%`}</Text>
+        <Text style={[styles.percentText,{color:labelColor}]}>{`${data[0]}%`}</Text>
       </View>
       <View style={styles.labelRow}>
         {labels.map((label, index) => (
-          <Text key={index} style={styles.labelText}>
+          <Text key={index} style={[styles.labelText,{color:labelColor}]}>
             {label}
           </Text>
         ))}

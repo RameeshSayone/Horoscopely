@@ -4,6 +4,8 @@ import { StatusBar, Text, TouchableOpacity, View, ImageBackground, FlatList, Ima
 import LinearGradient from 'react-native-linear-gradient';
 import { ImagePaths } from '../../constant/images';
 import { styles } from './styles';
+import screenName from '../../constant/screenName';
+import { RootStackParamList } from '../../interfaces/common';
 
 interface Card {
   id: number;
@@ -52,7 +54,7 @@ const data = [
 ];
 
 const ViewReports: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<RootStackParamList>();
 
   const renderItem = ({ item }: { item: Card }) => (
     <LinearGradient colors={['#446FFE', '#8925AEBF']} useAngle={true} angle={234} style={styles.linearGradient}>
@@ -62,7 +64,9 @@ const ViewReports: React.FC = () => {
       </View>
       <Text style={styles.descriptionText}>{item.description}</Text>
       <View style={styles.actionContainer}>
-        <TouchableOpacity style={styles.viewDetailButton}>
+        <TouchableOpacity 
+        style={styles.viewDetailButton}
+        onPress={()=>navigation.navigate(screenName.VIEW_REPORTS_DETAILS)}>
           <Text style={styles.viewDetailText}>View Detail</Text>
           <Image source={ImagePaths.arrow} style={styles.arrowImage} />
         </TouchableOpacity>

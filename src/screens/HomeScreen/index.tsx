@@ -61,9 +61,9 @@ const HomeScreen: React.FC = () => {
               <Image source={ImagePaths.aries} style={styles.aries} />
             </View>
             <View style={styles.chartRow}>
-              <RingChart data={[85]} labels={['Love']} />
-              <RingChart data={[67]} labels={['Career']} />
-              <RingChart data={[49]} labels={['Health']} />
+              <RingChart data={[85]} labels={['Love']} labelColor='#FFFFFF' chartColor='rgba(132, 202, 255, 0.4)' />
+              <RingChart data={[67]} labels={['Career']} labelColor='#FFFFFF' chartColor='rgba(132, 202, 255, 0.4)' />
+              <RingChart data={[49]} labels={['Health']} labelColor='#FFFFFF' chartColor='rgba(132, 202, 255, 0.4)' />
             </View>
             <View style={styles.eventSec}>
               <View style={styles.calendarSec}>

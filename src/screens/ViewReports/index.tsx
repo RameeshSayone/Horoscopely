@@ -97,7 +97,9 @@ const ViewReports: React.FC = () => {
             </TouchableOpacity>
           </View>
           <View style={styles.calendarIcon}>
-            <Image source={ImagePaths.calendar} style={styles.calendarImage} />
+            <TouchableOpacity onPress={()=>navigation.navigate(screenName.SELECT_DATE_RANGE)}>
+              <Image source={ImagePaths.calendar} style={styles.calendarImage} />
+            </TouchableOpacity>
           </View>
         </View>
       </View>

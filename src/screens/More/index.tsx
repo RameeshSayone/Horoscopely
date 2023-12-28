@@ -89,6 +89,9 @@ const More: React.FC = () => {
       case 'View Reports':
         navigation.navigate(screenName.VIEW_REPORTS);
         break;
+      case 'FAQs':
+        navigation.navigate(screenName.FAQ);
+        break;
       default :
       navigation.navigate(screenName.VIEW_REPORTS);
     }

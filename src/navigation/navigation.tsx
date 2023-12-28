@@ -19,6 +19,8 @@ import CalendarAdvice from '../screens/CalendarAdvice';
 import ManageInterest from '../screens/ManageInterest';
 import ViewReports from '../screens/ViewReports';
 import ViewReportsDetails from '../screens/ViewReportsDetails';
+import SelectDateRange from '../screens/SelectDateRange';
+import Faq from '../screens/Faq';
 import screenName from '../constant/screenName';
 import { RootStackParamList } from '../interfaces/common';
 
@@ -49,6 +51,8 @@ const Navigation: React.FC = () => {
         <Stack.Screen name={screenName.MANAGE_INTEREST} component={ManageInterest} />
         <Stack.Screen name={screenName.VIEW_REPORTS} component={ViewReports} />
         <Stack.Screen name={screenName.VIEW_REPORTS_DETAILS} component={ViewReportsDetails} />
+        <Stack.Screen name={screenName.SELECT_DATE_RANGE} component={SelectDateRange} />
+        <Stack.Screen name={screenName.FAQ} component={Faq} />
       </Stack.Navigator>
     </NavigationContainer>
   );

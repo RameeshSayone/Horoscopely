@@ -22,4 +22,6 @@ export type RootStackParamList = {
     MANAGE_INTEREST:undefined;
     VIEW_REPORTS:undefined;
     VIEW_REPORTS_DETAILS:undefined;
+    SELECT_DATE_RANGE:undefined;
+    FAQ:undefined;
   };

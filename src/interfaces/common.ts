@@ -24,4 +24,5 @@ export type RootStackParamList = {
     VIEW_REPORTS_DETAILS:undefined;
     SELECT_DATE_RANGE:undefined;
     FAQ:undefined;
+    VIEW_PACKAGES:undefined;
   };

@@ -23,7 +23,7 @@ const data = [
     logo: ImagePaths.subcription,
   },
   {
-    id: 2,
+    id: 2,  
     title: 'Manage Interest',
     logo: ImagePaths.manageInterest,
   },
@@ -91,6 +91,12 @@ const More: React.FC = () => {
         break;
       case 'FAQs':
         navigation.navigate(screenName.FAQ);
+        break;
+      case 'Terms and Privacy':
+        navigation.navigate(screenName.TERMS_AND_CONDITION);
+        break;
+      case 'Subscription Packages':
+        navigation.navigate(screenName.VIEW_PACKAGES);
         break;
       default :
       navigation.navigate(screenName.VIEW_REPORTS);

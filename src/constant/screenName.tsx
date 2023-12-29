@@ -19,5 +19,6 @@ const enum  screenName {
     VIEW_REPORTS_DETAILS='VIEW_REPORTS_DETAILS',
     SELECT_DATE_RANGE='SELECT_DATE_RANGE',
     FAQ='FAQ',
+    VIEW_PACKAGES='VIEW_PACKAGES',
   }
 export default screenName

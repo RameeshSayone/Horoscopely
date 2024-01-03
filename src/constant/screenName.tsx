@@ -21,5 +21,6 @@ const enum  screenName {
     FAQ='FAQ',
     VIEW_PACKAGES='VIEW_PACKAGES',
     MANAGE_PAYMENT='MANAGE_PAYMENT',
+    IOS_VERIFICATION='IOS_VERIFICATION',
   }
 export default screenName

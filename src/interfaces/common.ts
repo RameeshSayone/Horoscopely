@@ -26,4 +26,5 @@ export type RootStackParamList = {
     FAQ:undefined;
     VIEW_PACKAGES:undefined;
     MANAGE_PAYMENT:undefined;
+    IOS_VERIFICATION:undefined;
   };

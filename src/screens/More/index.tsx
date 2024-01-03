@@ -102,7 +102,7 @@ const More: React.FC = () => {
         navigation.navigate(screenName.VIEW_PACKAGES);
         break;
       default :
-      navigation.navigate(screenName.VIEW_REPORTS);
+      navigation.navigate(screenName.IOS_VERIFICATION);
     }
   }
   const renderItem = ({ item }: { item: Card }) => (

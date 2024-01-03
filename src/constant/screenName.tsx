@@ -20,5 +20,6 @@ const enum  screenName {
     SELECT_DATE_RANGE='SELECT_DATE_RANGE',
     FAQ='FAQ',
     VIEW_PACKAGES='VIEW_PACKAGES',
+    MANAGE_PAYMENT='MANAGE_PAYMENT',
   }
 export default screenName

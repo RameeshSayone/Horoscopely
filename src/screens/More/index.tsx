@@ -86,6 +86,9 @@ const More: React.FC = () => {
       case 'Manage Interest':
         navigation.navigate(screenName.MANAGE_INTEREST);
         break;
+      case 'Manage Payment':
+        navigation.navigate(screenName.MANAGE_PAYMENT);
+        break;
       case 'View Reports':
         navigation.navigate(screenName.VIEW_REPORTS);
         break;

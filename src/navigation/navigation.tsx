@@ -22,6 +22,7 @@ import ViewReportsDetails from '../screens/ViewReportsDetails';
 import SelectDateRange from '../screens/SelectDateRange';
 import Faq from '../screens/Faq';
 import ViewsPackages from '../screens/ViewsPackages';
+import ManagePayment from '../screens/ManagePayment';
 import screenName from '../constant/screenName';
 import { RootStackParamList } from '../interfaces/common';
 
@@ -34,7 +35,7 @@ const Navigation: React.FC = () => {
       screenOptions={{
         headerShown: false,
       }}>
-         <Stack.Screen name={screenName.DASHBOARD} component={Dashboard} />
+        <Stack.Screen name={screenName.DASHBOARD} component={Dashboard} />
         <Stack.Screen name={screenName.WELCOME} component={WelcomeScreen} />
         <Stack.Screen name={screenName.TERMS_AND_CONDITION} component={TermsAndConditionScreen} />
         <Stack.Screen name={screenName.PRIVACY_POLICY} component={PrivacyPolicyScreen} />
@@ -56,6 +57,7 @@ const Navigation: React.FC = () => {
         <Stack.Screen name={screenName.SELECT_DATE_RANGE} component={SelectDateRange} />
         <Stack.Screen name={screenName.FAQ} component={Faq} />
         <Stack.Screen name={screenName.VIEW_PACKAGES} component={ViewsPackages} />
+        <Stack.Screen name={screenName.MANAGE_PAYMENT} component={ManagePayment} />
       </Stack.Navigator>
     </NavigationContainer>
   );

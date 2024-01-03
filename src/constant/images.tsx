@@ -46,6 +46,7 @@ enum ImagePaths {
     health=require('../../assets/images/health.png'),
     personalLife=require('../../assets/images/personalLife.png'),
     emotion=require('../../assets/images/emotion.png'),
+    mobilePayment=require('../../assets/images/mobilePayment.png'),
   } 
 export { ImagePaths };
   

@@ -25,4 +25,5 @@ export type RootStackParamList = {
     SELECT_DATE_RANGE:undefined;
     FAQ:undefined;
     VIEW_PACKAGES:undefined;
+    MANAGE_PAYMENT:undefined;
   };

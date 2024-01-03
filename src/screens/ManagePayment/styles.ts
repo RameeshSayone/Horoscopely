@@ -1,0 +1,121 @@
+import { Platform, StyleSheet } from "react-native";
+import { fontFamily } from "../../constant/fontFamily";
+import { screenSize } from "../../constant/screenSize";
+
+ export const styles = StyleSheet.create( {
+    background: { flex: 1 },
+    headerContainer: {
+      flexDirection: 'row',
+      padding: 25,
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginTop: Platform.OS === 'ios' ? 40 : 20,
+    },
+    arrowImage: {
+      width: 18,
+      height: 29,
+      tintColor: '#FFFFFF',
+    },
+    titleContainer: { alignItems: 'center', flex: 1 },
+    titleText: {
+      fontFamily: fontFamily.bold,
+      fontSize: 15,
+      lineHeight: 18,
+      color: '#FFFFFF',
+    },
+    contentContainer: { paddingHorizontal: 30 },
+    sectionContainer: { marginVertical: 10 },
+    sectionTitle: {
+      fontFamily: fontFamily.medium,
+      fontSize: 14,
+      lineHeight: 16,
+      color: '#FFFFFF',
+    },
+    gradientContainer: { marginVertical: 10,},
+    linearGradient: { borderRadius: 8,  },
+    planDetailsContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    linearInnerSec:{
+      borderWidth: 2,
+      borderColor: '#2272FCFC',
+      padding: 15,
+      borderRadius: 8,
+    },
+    planLabelText: {
+      fontFamily: fontFamily.medium,
+      fontSize: 13,
+      lineHeight: 15,
+      color: '#FFFFFF',
+    },
+    planAmount: {
+      fontFamily: fontFamily.bold,
+      fontSize: 17,
+      lineHeight: 19,
+      color: '#FFFFFF',
+      marginTop: 15,
+    },
+    planType: {
+      fontFamily: fontFamily.regular,
+      fontSize: 11,
+      lineHeight: 19,
+      color: '#FFFFFF',
+    },
+    mobilePaymentImage: { width: 110, height: 86 },
+    viewPlansButton: {
+      paddingVertical: 10,
+      paddingHorizontal: 30,
+      backgroundColor: '#FFFFFFCF',
+      alignSelf: 'baseline',
+      borderRadius: 33,
+      borderWidth: 2,
+      borderColor: '#FFFFFF',
+      marginVertical: 5,
+    },
+    viewPlansButtonText: {
+      fontFamily: fontFamily.semiBold,
+      fontSize: 13,
+      lineHeight: 15,
+      color: '#007AFF',
+    },
+    cardContainer: {
+      padding: 20,
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: '#FFFFFF',
+    },
+    rowContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      flexWrap: 'wrap',
+      marginBottom: 20,
+    },
+    labelText: {
+      fontFamily: fontFamily.bold,
+      fontSize: 11,
+      lineHeight: 13,
+      color: '#FFFFFF',
+      width: 100,
+    },
+    colon: {
+      fontFamily: fontFamily.bold,
+      fontSize: 11,
+      lineHeight: 13,
+      color: '#FFFFFF',
+    },
+    cardText: {
+      fontFamily: fontFamily.regular,
+      fontSize: 13,
+      lineHeight: 15,
+      color: '#FFFFFF',
+      marginLeft: 5,
+    },
+    flatList: {
+      marginVertical: 15,
+      flexGrow: 1,
+      height: screenSize.height * 0.5,
+    },
+    separator: { height: 15 },
+  });

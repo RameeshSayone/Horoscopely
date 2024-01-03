@@ -22,7 +22,10 @@ const IosVerification: React.FC = () => {
       <View style={styles.imageContainer}>
         <Image source={ImagePaths.iosVerify} style={styles.iosImage} />
       </View>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView
+       bounces={false}
+       showsVerticalScrollIndicator={false}
+       style={styles.scrollView}>
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}>Date of Birth</Text>
           <Text numberOfLines={2} style={styles.sectionText}>

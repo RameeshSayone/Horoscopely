@@ -22,5 +22,6 @@ const enum  screenName {
     VIEW_PACKAGES='VIEW_PACKAGES',
     MANAGE_PAYMENT='MANAGE_PAYMENT',
     IOS_VERIFICATION='IOS_VERIFICATION',
+    ERROR_404='ERROR_404',
   }
 export default screenName

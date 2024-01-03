@@ -101,6 +101,9 @@ const More: React.FC = () => {
       case 'Subscription Packages':
         navigation.navigate(screenName.VIEW_PACKAGES);
         break;
+      case 'App Info':
+        navigation.navigate(screenName.ERROR_404);
+        break;
       default :
       navigation.navigate(screenName.IOS_VERIFICATION);
     }

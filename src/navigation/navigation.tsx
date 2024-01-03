@@ -24,6 +24,7 @@ import Faq from '../screens/Faq';
 import ViewsPackages from '../screens/ViewsPackages';
 import ManagePayment from '../screens/ManagePayment';
 import IosVerification from '../screens/IosVerification';
+import ErrorPage from '../screens/ErrorPage';
 import screenName from '../constant/screenName';
 import { RootStackParamList } from '../interfaces/common';
 
@@ -60,6 +61,7 @@ const Navigation: React.FC = () => {
         <Stack.Screen name={screenName.VIEW_PACKAGES} component={ViewsPackages} />
         <Stack.Screen name={screenName.MANAGE_PAYMENT} component={ManagePayment} />
         <Stack.Screen name={screenName.IOS_VERIFICATION} component={IosVerification} />
+        <Stack.Screen name={screenName.ERROR_404} component={ErrorPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

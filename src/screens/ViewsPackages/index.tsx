@@ -1,11 +1,12 @@
 
 
-import React from "react";
+import React, { useState } from "react";
 import { ImageBackground, Image, Text, TouchableOpacity, View, FlatList, SafeAreaView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { ImagePaths } from "../../constant/images";
 import { styles } from "./styles";
 import PacakageSlider from "../../components/PackageSlider";
+import SubscriptionAdModal from "../../components/SubcriptionAdModal";
 
 interface Card {
   id: number;
@@ -18,6 +19,10 @@ interface Props {
 
 const ViewPackages: React.FC = () => {
   const navigation = useNavigation();
+  const [isVisible,setIsVisible]= useState(true);
+  const closeModal=()=>{
+    setIsVisible(false)
+  }
   const carouselData = [
     { title: 'Free 7 Days', type: 'Trial', price: '9.99' },
     { title: 'Free 7 Days', type: 'Trial', price: '9.99' },
@@ -91,6 +96,9 @@ const ViewPackages: React.FC = () => {
           />
         </View>
       </View>
+      <SubscriptionAdModal
+       isVisible={isVisible}
+       closeModal={()=>{closeModal()}}/>
     </ImageBackground>
   );
 };

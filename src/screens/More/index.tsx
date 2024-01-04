@@ -77,6 +77,21 @@ const data = [
     title: 'App Info',
     logo: ImagePaths.info,
   },
+  {
+    id: 13,
+    title: 'Ios Verification',
+    logo: ImagePaths.info,
+  },
+  {
+    id: 14,
+    title: 'Error',
+    logo: ImagePaths.info,
+  },
+  {
+    id: 15,
+    title: 'Offline',
+    logo: ImagePaths.info,
+  },
 ];
 
 const More: React.FC = () => {
@@ -102,7 +117,16 @@ const More: React.FC = () => {
         navigation.navigate(screenName.VIEW_PACKAGES);
         break;
       case 'App Info':
+        navigation.navigate(screenName.VERSION_DETAILS);
+        break;
+      case 'Error':
         navigation.navigate(screenName.ERROR_404);
+        break;
+      case 'Ios Verification':
+        navigation.navigate(screenName.IOS_VERIFICATION);
+        break;
+      case 'Offline':
+        navigation.navigate(screenName.OFFLINE_PAGE);
         break;
       default :
       navigation.navigate(screenName.IOS_VERIFICATION);

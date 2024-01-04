@@ -28,4 +28,6 @@ export type RootStackParamList = {
     MANAGE_PAYMENT:undefined;
     IOS_VERIFICATION:undefined;
     ERROR_404:undefined;
+    OFFLINE_PAGE:undefined;
+    VERSION_DETAILS:undefined;
   };

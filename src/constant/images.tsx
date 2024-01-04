@@ -49,6 +49,8 @@ enum ImagePaths {
     mobilePayment=require('../../assets/images/mobilePayment.png'),
     iosVerify=require('../../assets/images/iosVerify.png'),
     error404=require('../../assets/images/error404.png'),
+    offline=require('../../assets/images/offline.png'),
+    versionBg=require('../../assets/images/versionBg.png'),
   } 
 export { ImagePaths };
   

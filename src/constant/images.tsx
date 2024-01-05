@@ -51,6 +51,7 @@ enum ImagePaths {
     error404=require('../../assets/images/error404.png'),
     offline=require('../../assets/images/offline.png'),
     versionBg=require('../../assets/images/versionBg.png'),
+    tick=require('../../assets/images/tick.png'),
   } 
 export { ImagePaths };
   

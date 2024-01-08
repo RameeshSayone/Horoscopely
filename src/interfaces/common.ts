@@ -19,4 +19,15 @@ export type RootStackParamList = {
     SELECT_TIME_SCREEN:undefined;
     FOCUS_OF_THE_DAY:undefined;
     CALENDAR_ADVICE:undefined;
+    MANAGE_INTEREST:undefined;
+    VIEW_REPORTS:undefined;
+    VIEW_REPORTS_DETAILS:undefined;
+    SELECT_DATE_RANGE:undefined;
+    FAQ:undefined;
+    VIEW_PACKAGES:undefined;
+    MANAGE_PAYMENT:undefined;
+    IOS_VERIFICATION:undefined;
+    ERROR_404:undefined;
+    OFFLINE_PAGE:undefined;
+    VERSION_DETAILS:undefined;
   };

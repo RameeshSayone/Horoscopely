@@ -1,0 +1,126 @@
+import { StyleSheet, Platform } from 'react-native';
+import { fontFamily } from '../../constant/fontFamily';
+
+export const styles = StyleSheet.create({
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    width: '90%',
+    height: Platform.OS === 'ios' ? '85%' : '90%',
+    backgroundColor: '#52198BFC',
+    borderRadius: 14,
+    position: 'relative',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 25,
+    right: 25,
+    zIndex: 1,
+  },
+  scrollContainer: {
+    flexGrow: 1,
+  },
+  closeIcon: {
+    width: 15,
+    height: 15,
+    tintColor: '#FFFFFF',
+  },
+  itemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  bullet: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    width: 5,
+    height: 5,
+    marginRight: 15,
+  },
+  itemText: {
+    fontFamily: fontFamily.regular,
+    fontSize: 13,
+    lineHeight: 15,
+    color: '#FFFFFF',
+  },
+  linearGradient: {
+    padding: 20,
+    borderRadius: 12,
+    marginVertical: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  planContainer:{
+    borderRadius:12,
+    borderWidth:1.5,
+    borderColor:'#FFFFFF',
+    padding:25,
+    marginVertical:20,
+    backgroundColor:'#00000010',
+  },
+  subscriptionText: {
+    fontFamily: fontFamily.bold,
+    fontSize: 16,
+    lineHeight: 19,
+    color: '#74F6FF',
+    marginTop: 70,
+    textAlign:'center',
+    marginBottom:10
+  },
+  subscriptionPrice: {
+    fontFamily: fontFamily.bold,
+    fontSize: 15,
+    lineHeight: 18,
+    color: '#FFFFFF',
+  },
+  cancelText: {
+    fontFamily: fontFamily.regular,
+    fontSize: 11,
+    lineHeight: 13,
+    color: '#FFFFFF',
+    marginVertical: 5,
+  },
+  toggleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 20,
+    borderTopWidth: 1,
+    borderTopColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#FFFFFF',
+    marginVertical: 20,
+    width: '100%',
+    paddingHorizontal: 15,
+  },
+  toggleText: {
+    fontFamily: fontFamily.regular,
+    fontSize: 11,
+    lineHeight: 13,
+    color: '#FFFFFF',
+    marginVertical: 5,
+  },
+  continueButton: {
+    borderRadius: 30,
+    marginVertical: 40,
+  },
+  continueGradient: {
+    paddingVertical: 12,
+    paddingHorizontal: 60,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  continueText: {
+    fontFamily: fontFamily.semiBold,
+    fontSize: 12,
+    lineHeight: 14,
+    color: '#FFFFFF',
+  },
+});

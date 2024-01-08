@@ -26,7 +26,6 @@ export const styles = StyleSheet.create({
       fontSize: 12,
       fontFamily: fontFamily.medium,
       lineHeight: 14,
-      color: '#FFFFFF',
       top: -15,
     },
   });

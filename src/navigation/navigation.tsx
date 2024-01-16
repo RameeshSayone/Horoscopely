@@ -27,6 +27,7 @@ import IosVerification from '../screens/IosVerification';
 import ErrorPage from '../screens/ErrorPage';
 import OfflinePage from '../screens/OfflinePage';
 import VersionDetails from '../screens/VersionDetails';
+import Profile from '../screens/Profile';
 import screenName from '../constant/screenName';
 import { RootStackParamList } from '../interfaces/common';
 
@@ -66,6 +67,7 @@ const Navigation: React.FC = () => {
         <Stack.Screen name={screenName.ERROR_404} component={ErrorPage} />
         <Stack.Screen name={screenName.OFFLINE_PAGE} component={OfflinePage} />
         <Stack.Screen name={screenName.VERSION_DETAILS} component={VersionDetails} />
+        <Stack.Screen name={screenName.PROFILE} component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

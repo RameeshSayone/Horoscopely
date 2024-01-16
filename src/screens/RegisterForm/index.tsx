@@ -127,6 +127,8 @@ const RegisterForm: React.FC = () => {
           <View>
             <Text style={styles.label}>Birth Gender</Text>
             <RadioButtonGroup
+              labelColor={'#09182B'}
+              activeColor={'#B342F2'}
               options={genderOptions}
               selected={gender}
               handleChange={handleGenderChange}
@@ -137,6 +139,8 @@ const RegisterForm: React.FC = () => {
           <View>
             <Text style={styles.label}>Relationship Status</Text>
             <RadioButtonGroup
+              labelColor={'#09182B'}
+              activeColor={'#B342F2'}
               options={relationShipOptions}
               selected={relationShipStatus}
               handleChange={handleRelationShipStatusChange}

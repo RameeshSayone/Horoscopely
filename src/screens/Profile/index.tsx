@@ -7,6 +7,7 @@ import { fontFamily } from "../../constant/fontFamily";
 import { screenSize } from "../../constant/screenSize";
 import RadioButtonGroup from "../../components/RadioButtonGroup";
 import DobPicker from "../../components/DobPicker";
+import TobPicker from "../../components/TobPicker";
 interface Card{
     id: number;
     name: string;
@@ -129,7 +130,19 @@ const BasicListItem:React.FC<BasicListItem>=({label,value})=>{
 const Profile:React.FC=()=>{
     const [name,setName]=useState('John Luther');
     const [dob,setDob]=useState('Jan 21 1989');
+    const [month, setMonth] = useState('');
+    const [day, setDay] = useState('');
+    const [year, setYear] = useState('');
+    
+
     const [tob,setTob]=useState('09:32 AM');
+    const [hour, setHour] = useState('');
+    const [minute, setMinute] = useState('');
+    const [type, setType] = useState('');
+    
+
+
+
     const [pob,setPob]=useState('New York');
     const [email,setEmail]=useState('sample@mail.com');
     const [mobile,setMobile]=useState('9876543210');
@@ -173,8 +186,31 @@ const Profile:React.FC=()=>{
     const onKeyboardDidHide = () => {
           setTopSecFlex(0.6);
       };
+    const onChangeDob=(value:string)=>{
+        setDob(value)
+    }
+    const onChangeTob=(value:string)=>{
+        setTob(value)
+    }
+    const splitTob=(tob:string)=>{
+        const [time, type] = tob.split(' ');
+        const [hour, minute] = time.split(':');
+        setHour(hour);
+        setMinute(minute);
+        setType(type);
+
+    }
+    const splitDob=(dob:string)=>{
+        const dobArray=dob.split(' ');
+        setMonth(dobArray[0]);
+        setDay(dobArray[1]);
+        setYear(dobArray[2]);
+    }
+    
     
     useEffect(() => {
+        splitDob(dob);
+        splitTob(tob);
         const keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', onKeyboardDidShow);
         const keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', onKeyboardDidHide);
         return () => {
@@ -323,14 +359,15 @@ const Profile:React.FC=()=>{
                     lineHeight:18,
                     color:'#09182B',
                 }}>Basic details</Text>
-                <TouchableOpacity>
+                <TouchableOpacity
+                onPress={()=>setIsEditView(!isEditView)}>
                     <Text 
                     style={{
                         fontFamily:fontFamily.medium,
                         fontSize:13,
                         lineHeight:15,
                         color:'#007AFF',
-                    }}>Edit</Text>
+                    }}>{isEditView?"Save":"Edit"}</Text>
                 </TouchableOpacity>
 
 
@@ -388,9 +425,16 @@ const Profile:React.FC=()=>{
                         />
                     </View>
                     <DobPicker
-                    options={options}
-                    isDropdownVisible={isDropdownVisible}
-                    toggleDropdown={toggleDropdown}
+                    month={month}
+                    day={day}
+                    year={year}
+                    setDob={onChangeDob}
+                    />
+                     <TobPicker
+                    hour={hour}
+                    minute={minute}
+                    type={type}
+                    setTob={onChangeTob}
                     />
                     <View style={{
                             marginBottom:15

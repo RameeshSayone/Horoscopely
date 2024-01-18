@@ -145,7 +145,6 @@ export const styles=StyleSheet.create({
       },
       basicDetailsContainer: {
         padding: 25,
-        flex: 0.4,
       },
       detailsRow: {
         flexDirection: 'row',

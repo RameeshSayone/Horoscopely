@@ -7,6 +7,7 @@ import RadioButtonGroup from "../../components/RadioButtonGroup";
 import DobPicker from "../../components/DobPicker";
 import TobPicker from "../../components/TobPicker";
 import { styles } from "./styles";
+import ProfileTabComponent from "../../components/ProfileTabComponent";
 interface Card{
     id: number;
     name: string;
@@ -99,8 +100,10 @@ const Profile:React.FC=()=>{
     const relationShipOptions = ['Single', 'Married', 'Engaged', 'In a Relationship'];
     const [gender,setGender]=useState('Male');
     const [relationshipStatus,setRelationshipStatus]=useState('Single');
-    const [isEditView,setIsEditView]=useState(true);
+    const [isEditView,setIsEditView]=useState(false);
     const [topSecFlex, setTopSecFlex] = useState(0.6);
+    const [bottomSecFlex, setBottomSecFlex] = useState(0.4);
+    const [expandedView,setExpandedView]=useState(false);
     const onChangeName=(val:string)=>{
         setName(val);
     }
@@ -121,6 +124,7 @@ const Profile:React.FC=()=>{
         setRelationshipStatus(text);
       };
     const onKeyboardDidShow = (event: any) => {
+      if(Platform.OS=='ios')
         setTopSecFlex(0.3);
       };
     const onKeyboardDidHide = () => {
@@ -155,6 +159,16 @@ const Profile:React.FC=()=>{
           keyboardDidHideListener.remove();
         };
       }, []);
+    const onClickShow=()=>{
+      if(expandedView==false){
+        setTopSecFlex(0.99)
+        setBottomSecFlex(0.01)
+      }else{
+        setTopSecFlex(0.6)
+        setBottomSecFlex(0.4)
+      }
+      setExpandedView(!expandedView)
+    }
    
       return(
        <ImageBackground
@@ -163,7 +177,7 @@ const Profile:React.FC=()=>{
         >
           <View 
            style={[styles.topSection,{
-            flex:Platform.OS=='ios'?topSecFlex:0.6,
+            flex:topSecFlex
            }]}>
             <ImageBackground
             source={ImagePaths.versionBg}
@@ -198,17 +212,28 @@ const Profile:React.FC=()=>{
                     ItemSeparatorComponent={() => <View style={styles.ItemSeparatorComponent} />}
                     />
                   </View>
+                  {expandedView&&
+                  <View>
+                    <ProfileTabComponent/>
+                  </View>}
                 </ScrollView>
                 <TouchableOpacity
-                style={styles.showMoreButton}>
-                  <Text style={styles.showMoreText}>Show More</Text>
+                style={styles.showMoreButton}
+                onPress={onClickShow}
+                >
+                  <Text style={styles.showMoreText}>{expandedView?'Show Less':'Show More'}</Text>
                   <Image source={ImagePaths.arrow}
-                  style={styles.showMoreArrow}/>
+                  style={[
+                    styles.showMoreArrow,
+                    { transform: [{ rotate:expandedView? '90deg':'-90deg' }],}]}/>
                 </TouchableOpacity>
               </View>
             </ImageBackground>
           </View>
-          <View style={styles.basicDetailsContainer}>
+          <View style={[
+            styles.basicDetailsContainer,
+            {flex:bottomSecFlex}
+          ]}>
             <View style={styles.detailsRow}>
               <Text style={styles.detailsRowTitle}>Basic details</Text>
                 <TouchableOpacity

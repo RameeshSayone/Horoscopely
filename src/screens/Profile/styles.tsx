@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { fontFamily } from "../../constant/fontFamily";
 import { screenSize } from "../../constant/screenSize";
 
@@ -172,30 +172,6 @@ export const styles=StyleSheet.create({
         marginBottom: 15,
       },
       inputLabel: {
-        fontFamily: fontFamily.bold,
-        fontSize: 12,
-        lineHeight: 14,
-        color: '#545353',
-        marginBottom: 10,
-      },
-      textInput: {
-        borderWidth: 0.5,
-        borderColor: '#AFAFAF',
-        borderRadius: 3,
-        backgroundColor: '#FFFFFF',
-        paddingHorizontal: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 40,
-        fontFamily: fontFamily.regular,
-        color: '#545353',
-        lineHeight: 18,
-        fontSize: 15,
-      },
-      formContainer: {
-        marginBottom: 15,
-      },
-      labelText: {
         fontFamily: fontFamily.bold,
         fontSize: 12,
         lineHeight: 14,

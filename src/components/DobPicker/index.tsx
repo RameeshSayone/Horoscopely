@@ -47,13 +47,7 @@ const DobPicker: React.FC<CustomDropdownProps> = ({month,day,year,setDob   }) =>
   const closeYearModal = () => setYearVisible(false);
   return (
     <View style={styles.container}>
-        <Text style={{
-            fontFamily:fontFamily.bold,
-            fontSize:12,
-            lineHeight:14,
-            color:'#545353',
-            marginBottom:10
-        }}>{"Date of Birth"}</Text>
+        <Text style={styles.headerText}>{"Date of Birth"}</Text>
     <View style={{
         flexDirection:'row',
     }}>

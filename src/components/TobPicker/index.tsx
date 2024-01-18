@@ -47,13 +47,7 @@ const TobPicker: React.FC<CustomDropdownProps> = ({hour,minute,type,setTob   }) 
   const closeTypeModal = () => setTypeVisible(false);
   return (
     <View style={styles.container}>
-        <Text style={{
-            fontFamily:fontFamily.bold,
-            fontSize:12,
-            lineHeight:14,
-            color:'#545353',
-            marginBottom:10
-        }}>{"Time of Birth"}</Text>
+        <Text style={styles.headerText}>{"Time of Birth"}</Text>
     <View style={{
         flexDirection:'row',
     }}>

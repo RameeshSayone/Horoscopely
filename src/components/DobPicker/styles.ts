@@ -1,10 +1,16 @@
 import { StyleSheet } from 'react-native';
 import { fontFamily } from '../../constant/fontFamily';
-import { screenSize } from '../../constant/screenSize';
 
 export const styles = StyleSheet.create({
   container: {
     marginBottom:15
+  },
+  headerText:{
+    fontFamily:fontFamily.bold,
+    fontSize:12,
+    lineHeight:14,
+    color:'#545353',
+    marginBottom:10
   },
   dropdownButton: {
     borderWidth:0.5,

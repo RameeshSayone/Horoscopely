@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import { fontFamily } from '../../constant/fontFamily';
-import { screenSize } from '../../constant/screenSize';
 
 export const styles = StyleSheet.create({
   container: {
@@ -26,5 +25,12 @@ export const styles = StyleSheet.create({
     tintColor: '#545353',
     position:'absolute',
     right:10
+  },
+  headerText:{
+    fontFamily:fontFamily.bold,
+    fontSize:12,
+    lineHeight:14,
+    color:'#545353',
+    marginBottom:10
   },
 });

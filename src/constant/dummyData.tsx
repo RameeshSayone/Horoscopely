@@ -13,3 +13,5 @@ export const MINUTES: string[] = Array.from(
     index.toString().padStart(2, '0')
 );
 export const TYPES=['AM','PM']
+export const TRAITS_DUMMY_CONTENT_1='You may have had trouble communicating in early life. Perhaps you suffer from feelings of inadequacy. You overcome these feelings through sheer necessity, for you have determination in achieving your goals and purposes in life. You will have strong likes and dislikes, and can be very reserved and dignified, though when vexed you are apt to be sharp and sarcastic if not actually cruel. Avoid pride, cultivate sympathy and endeavour to see things from others standpoints as well as your own.'
+export const TRAITS_DUMMY_CONTENT_2='You will have strong likes and dislikes, and can be very reserved and dignified, though when vexed you are apt to be sharp and sarcastic if not actually cruel. Avoid pride, cultivate sympathy and endeavour to see things from others standpoints as well as your own.'

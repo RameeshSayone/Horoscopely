@@ -58,6 +58,9 @@ enum ImagePaths {
     capricorn=require('../../assets/images/capricorn.png'),
     wind=require('../../assets/images/wind.png'),
     modality=require('../../assets/images/modality.png'),
+    ariesSlider=require('../../assets/images/ariesSlider.png'),
+    scorpionSlider=require('../../assets/images/scorpionSlider.png'),
+    blueArrow=require('../../assets/images/blueArrow.png'),
   } 
 export { ImagePaths };
   

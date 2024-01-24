@@ -1,30 +1,46 @@
-// Import necessary modules from React and React Native
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Text, ImageBackground, TouchableOpacity } from 'react-native';
+import { ImagePaths } from '../../constant/images';
+import CompatibiltySlider from '../../components/CompatibiltySlider';
+import { styles } from './styles';
 
-// Define the functional component for the screen
+const carouselData = [
+  {
+    name: 'Capricorn',
+    logo: ImagePaths.ariesSlider,
+    date: 'Mar 22 - Apr 19',
+    name1: 'Capricorn',
+    logo1: ImagePaths.scorpionSlider,
+    date1: 'Mar 22 - Apr 19',
+  },
+  {
+    name: 'Capricorn',
+    logo: ImagePaths.scorpionSlider,
+    date: 'Mar 22 - Apr 19',
+    name1: 'Capricorn',
+    logo1: ImagePaths.ariesSlider,
+    date1: 'Mar 22 - Apr 19',
+  },
+  {
+    name: 'Capricorn',
+    logo: ImagePaths.ariesSlider,
+    date: 'Mar 22 - Apr 19',
+    name1: 'Capricorn',
+    logo1: ImagePaths.scorpionSlider,
+    date1: 'Mar 22 - Apr 19',
+  },
+];
+
 const Compatibilty: React.FC = () => {
   return (
-    // The main container view
-    <View style={styles.container}>
-      {/* Displaying a text */}
-      <Text style={styles.text}>Hello, React Native with TypeScript!</Text>
-    </View>
+    <ImageBackground source={ImagePaths.bottomTabBg} style={styles.container}>
+      <Text style={styles.title}>Compatibility</Text>
+      <CompatibiltySlider data={carouselData} />
+      <TouchableOpacity style={styles.buttonContainer}>
+        <Text style={styles.buttonText}>Check Compatibility</Text>
+      </TouchableOpacity>
+    </ImageBackground>
   );
 };
 
-// Styles for the components
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-});
-
-// Export the component
 export default Compatibilty;

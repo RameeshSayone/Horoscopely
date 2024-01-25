@@ -25,5 +25,6 @@ const enum  screenName {
     ERROR_404='ERROR_404',
     OFFLINE_PAGE='OFFLINE_PAGE',
     VERSION_DETAILS='VERSION_DETAILS',
+    PROFILE='PROFILE',
   }
 export default screenName

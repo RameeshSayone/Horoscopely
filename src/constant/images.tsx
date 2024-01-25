@@ -52,6 +52,15 @@ enum ImagePaths {
     offline=require('../../assets/images/offline.png'),
     versionBg=require('../../assets/images/versionBg.png'),
     tick=require('../../assets/images/tick.png'),
+    profilePic=require('../../assets/images/profilePic.png'),
+    leo=require('../../assets/images/leo.png'),
+    zodiac=require('../../assets/images/zodiac.png'),
+    capricorn=require('../../assets/images/capricorn.png'),
+    wind=require('../../assets/images/wind.png'),
+    modality=require('../../assets/images/modality.png'),
+    ariesSlider=require('../../assets/images/ariesSlider.png'),
+    scorpionSlider=require('../../assets/images/scorpionSlider.png'),
+    blueArrow=require('../../assets/images/blueArrow.png'),
   } 
 export { ImagePaths };
   

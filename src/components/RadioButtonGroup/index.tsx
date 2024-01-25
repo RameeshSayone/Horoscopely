@@ -6,9 +6,11 @@ interface RadioButtonGroupProps {
   options: string[];
   selected:string;
   handleChange:(value:string) => void;
+  activeColor:string;
+  labelColor:string;
 }
 
-const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({ options ,selected,handleChange}) => {
+const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({ options ,selected,handleChange,activeColor,labelColor}) => {
   const [selectedOption, setSelectedOption] = useState<string>(selected);
 
   const handleSelectOption = (option: string) => {
@@ -29,11 +31,13 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({ options ,selected,h
             <View style={[
               styles.radioButton,
               selectedOption === option && styles.radioButtonSelected,
+              selectedOption === option && {backgroundColor:activeColor}
             ]}></View>
           </TouchableOpacity>
           <Text
               style={[
                 styles.radioButtonText,
+                {color:labelColor}
               ]}
             >
               {option}

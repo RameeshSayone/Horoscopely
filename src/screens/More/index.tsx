@@ -128,6 +128,9 @@ const More: React.FC = () => {
       case 'Offline':
         navigation.navigate(screenName.OFFLINE_PAGE);
         break;
+      case 'View Profile':
+        navigation.navigate(screenName.PROFILE);
+        break;
       default :
       navigation.navigate(screenName.IOS_VERIFICATION);
     }

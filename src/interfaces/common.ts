@@ -30,4 +30,5 @@ export type RootStackParamList = {
     ERROR_404:undefined;
     OFFLINE_PAGE:undefined;
     VERSION_DETAILS:undefined;
+    PROFILE:undefined;
   };

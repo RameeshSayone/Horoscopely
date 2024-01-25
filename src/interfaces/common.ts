@@ -31,4 +31,5 @@ export type RootStackParamList = {
     OFFLINE_PAGE:undefined;
     VERSION_DETAILS:undefined;
     PROFILE:undefined;
+    COMPATIBILITY_DETAIL_SCREEN:undefined;
   };

@@ -3,6 +3,9 @@ import { Text, ImageBackground, TouchableOpacity } from 'react-native';
 import { ImagePaths } from '../../constant/images';
 import CompatibiltySlider from '../../components/CompatibiltySlider';
 import { styles } from './styles';
+import { useNavigation } from '@react-navigation/native';
+import screenName from '../../constant/screenName';
+import { RootStackParamList } from '../../interfaces/common';
 
 const carouselData = [
   {
@@ -32,11 +35,14 @@ const carouselData = [
 ];
 
 const Compatibilty: React.FC = () => {
+  const navigation=useNavigation<RootStackParamList>()
   return (
     <ImageBackground source={ImagePaths.bottomTabBg} style={styles.container}>
       <Text style={styles.title}>Compatibility</Text>
       <CompatibiltySlider data={carouselData} />
-      <TouchableOpacity style={styles.buttonContainer}>
+      <TouchableOpacity
+      onPress={()=>navigation.navigate(screenName.COMPATIBILITY_DETAIL_SCREEN)}
+      style={styles.buttonContainer}>
         <Text style={styles.buttonText}>Check Compatibility</Text>
       </TouchableOpacity>
     </ImageBackground>

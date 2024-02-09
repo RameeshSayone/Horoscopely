@@ -7,11 +7,14 @@ interface GradientButtonProps {
   onPress: () => void;
   containerStyle: any;
   buttonName:string;
+  checkDisable: () => boolean;
 }
 
-const GradientButton: React.FC<GradientButtonProps> = ({ onPress, containerStyle,buttonName }) => {
+const GradientButton: React.FC<GradientButtonProps> = ({ onPress, containerStyle,buttonName ,checkDisable}) => {
   return (
-    <TouchableOpacity style={[styles.buttonContainer, containerStyle]} onPress={onPress}>
+    <TouchableOpacity 
+    disabled={checkDisable()}
+    style={[styles.buttonContainer, containerStyle]} onPress={onPress}>
       <LinearGradient
         colors={['#32A0EE', '#9713C6']}
         start={{ x: 0, y: 0.5 }}

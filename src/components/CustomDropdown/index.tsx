@@ -11,7 +11,7 @@ interface CustomDropdownProps {
 
 const CustomDropdown: React.FC<CustomDropdownProps> = ({ options, onSelectOption }) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const toggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible);
@@ -31,7 +31,7 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ options, onSelectOption
         activeOpacity={1}
       >
         <TextBox
-          placeholder="+000"
+          placeholder="+00"
           value={selectedOption}
           isEditable={false}
           onChange={() => {}}

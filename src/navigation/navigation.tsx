@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import WelcomeScreen from '../screens/WelcomeScreen'; 
@@ -31,25 +31,40 @@ import Profile from '../screens/Profile';
 import CompatibilityDetailScreen from '../screens/CompatibilityDetailScreen';
 import screenName from '../constant/screenName';
 import { RootStackParamList } from '../interfaces/common';
+import { getItem } from '../utils/localStorage';
+import { TOKEN } from '../constant/types';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
 const Navigation: React.FC = () => {
+  const [token,setToken]= useState<string|null>(null);
+  const [isLoading,setIsLoading]= useState<boolean>(true)
+  useEffect(()=>{
+    getToken()
+  },[])
+  const getToken=async()=>{
+    const token= await getItem(TOKEN)
+    setToken(token);
+    setIsLoading(false);
+    console.log("🚀 ~ token:", token)
+
+  }
+
+ 
   return (
     <NavigationContainer>
       <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}>
+        { isLoading==true?
+        <Stack.Screen name={screenName.LOADER_SCREEN} component={LoaderScreen} />
+        :token!==null?
+        <>
         <Stack.Screen name={screenName.DASHBOARD} component={Dashboard} />
-        <Stack.Screen name={screenName.WELCOME} component={WelcomeScreen} />
-        <Stack.Screen name={screenName.TERMS_AND_CONDITION} component={TermsAndConditionScreen} />
-        <Stack.Screen name={screenName.PRIVACY_POLICY} component={PrivacyPolicyScreen} />
-        <Stack.Screen name={screenName.SIGN_UP_WITH_PHONE} component={SignUpWithPhone} />
-        <Stack.Screen name={screenName.SIGN_UP_WITH_EMAIL} component={SignUpWithEmail} />
+       
         <Stack.Screen name={screenName.REGISTER_FORM} component={RegisterForm} />
         <Stack.Screen name={screenName.LOADER_SCREEN} component={LoaderScreen} />
-        {/* <Stack.Screen name={screenName.DASHBOARD} component={Dashboard} /> */}
         <Stack.Screen name={screenName.OTP_VERIFICATION} component={OtpVerification} />
         <Stack.Screen name={screenName.NOTIFICATION} component={Notification} />
         <Stack.Screen name={screenName.SETTINGS} component={Settings}/>
@@ -70,6 +85,14 @@ const Navigation: React.FC = () => {
         <Stack.Screen name={screenName.VERSION_DETAILS} component={VersionDetails} />
         <Stack.Screen name={screenName.PROFILE} component={Profile} />
         <Stack.Screen name={screenName.COMPATIBILITY_DETAIL_SCREEN} component={CompatibilityDetailScreen} />
+        </>:
+        <>
+         <Stack.Screen name={screenName.WELCOME} component={WelcomeScreen} />
+        <Stack.Screen name={screenName.TERMS_AND_CONDITION} component={TermsAndConditionScreen} />
+        <Stack.Screen name={screenName.PRIVACY_POLICY} component={PrivacyPolicyScreen} />
+        <Stack.Screen name={screenName.SIGN_UP_WITH_PHONE} component={SignUpWithPhone} />
+        <Stack.Screen name={screenName.SIGN_UP_WITH_EMAIL} component={SignUpWithEmail} />
+        </>}
       </Stack.Navigator>
     </NavigationContainer>
   );

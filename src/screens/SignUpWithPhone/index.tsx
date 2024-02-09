@@ -14,23 +14,60 @@ import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../../interfaces/common';
 import { styles } from './styles';
 import screenName from '../../constant/screenName';
+import auth, {  FirebaseAuthTypes } from '@react-native-firebase/auth';
+import { validatePhoneNumber } from '../../utils/validators';
+
 
 const MobileSignupScreen: React.FC = () => {
   const navigation = useNavigation<RootStackParamList>();
-  const [inputText, setInputText] = useState<string>('');
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
+  const [mobileErrorMessage, setMobileErrorMessage] = useState< string | null>('');
+  
+  
+  const [confirmation, setConfirmation] = useState< FirebaseAuthTypes.ConfirmationResult | null>(null);
+
+  const signInWithPhoneNumber = async () => {
+    try {
+      const confirmationResult = await auth().signInWithPhoneNumber(`+91${phoneNumber}`);
+      
+      navigation.navigate(screenName.OTP_VERIFICATION,{
+        confirmationResult:confirmationResult,
+        provider:phoneNumber,
+        isMobileVeification:true
+      })
+    } catch (error) {
+    }
+  };
+
+
 
   const handleInputChange = (text: string) => {
-    setInputText(text);
+    setPhoneNumber(text);
+    if(text==''){
+      setMobileErrorMessage("Phone number is required")
+    }
+    else if(validatePhoneNumber(text)){
+      setMobileErrorMessage(null)
+    }else{
+      setMobileErrorMessage("Invalid Phone number")
+    }
   };
+  const checkDisable=()=>{
+    if (mobileErrorMessage===null){
+         return false
+    }else{
+      return true
+    }
+  }
+  
 
   const onPressSignup = (): void => {
     navigation.navigate(screenName.REGISTER_FORM)
   };
 
-  const options = ['+91', '+000', '+111'];
+  const options = ['+91'];
 
   const handleSelectOption = (selectedOption: string) => {
-    // Handle selected option logic here
   };
 
   return (
@@ -48,7 +85,6 @@ const MobileSignupScreen: React.FC = () => {
         <View style={styles.middleContent}>
           <Image source={ImagePaths.logo} style={styles.logoImage} />
           <Text style={styles.mobileNumberText}>Mobile Number</Text>
-
           <View style={styles.inputContainer}>
             <CustomDropdown options={options} onSelectOption={handleSelectOption} />
             <View style={styles.textBoxContainer}>
@@ -56,16 +92,24 @@ const MobileSignupScreen: React.FC = () => {
                 placeholder="Enter your mobile number"
                 onChange={handleInputChange}
                 isEditable={true}
-                value={inputText}
+                value={phoneNumber}
               />
             </View>
           </View>
+          <View>
+                <Text>{mobileErrorMessage}</Text>
+          </View>
 
           <View style={styles.buttonWrapper}>
-            <GradientButton  buttonName={"Sign Up"} onPress={onPressSignup} containerStyle={styles.buttonContainer} />
+            <GradientButton 
+             checkDisable={checkDisable}
+             buttonName={"Sign Up"}
+             onPress={signInWithPhoneNumber} 
+             containerStyle={[styles.buttonContainer,{opacity:checkDisable()?0.5:1}]} />
           </View>
 
           <TouchableOpacity
+           
             onPress={() => navigation.goBack()}
             style={styles.backButton}>
             <Text style={styles.backButtonText}>Back To Signup Options</Text>

@@ -4,25 +4,22 @@ import OTPInputView from '@twotalltotems/react-native-otp-input';
 
 interface OTPInputProps {
   onOTPChange: (otp: string) => void;
+  value:string
 }
 
-const OTPInput: React.FC<OTPInputProps> = ({ onOTPChange }) => {
-  const [otp, setOTP] = useState('');
-
-  const handleOTPEnter = (enteredOTP: string) => {
-    setOTP(enteredOTP);
-  };
+const OTPInput: React.FC<OTPInputProps> = ({ onOTPChange,value }) => {
 
   return (
     <View style={styles.container}>
       <OTPInputView
-        pinCount={4}
-        code={otp}
-        onCodeChanged={handleOTPEnter}
+        pinCount={6}
+        code={value}
+        onCodeChanged={onOTPChange}
         autoFocusOnLoad
         codeInputFieldStyle={styles.underlineStyleBase}
         codeInputHighlightStyle={styles.underlineStyleHighLighted}
-        onCodeFilled={(code) => onOTPChange(code)}
+        onCodeFilled={(code) => {}}
+        keyboardType='number-pad'
       />
     </View>
   );
@@ -42,7 +39,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   underlineStyleBase: {
-    width: 55,
+    width: 40,
     height: 45,
     borderWidth: 0,
     borderBottomWidth: 2,

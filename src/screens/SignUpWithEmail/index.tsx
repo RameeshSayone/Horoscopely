@@ -13,15 +13,44 @@ import { RootStackParamList } from '../../interfaces/common';
 import { styles } from './styles';
 import screenName from '../../constant/screenName';
 import GradientButton from '../../components/GradientButton';
+import { firebase } from '../../../firebaseConfig';
+
 
 const EmailSignupScreen: React.FC = () => {
   const navigation = useNavigation<RootStackParamList>();
-  const [inputText, setInputText] = useState<string>('');
+  const [email, setIEmail] = useState<string>('sayone@yopmail.com');
 
   const handleInputChange = (text: string) => {
-    setInputText(text);
+    setIEmail(text);
   };
+  const signUpWithEmail = async (email:string) => {
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(email, '123456').then(()=>{
+        firebase.auth().currentUser?.sendEmailVerification({
+          handleCodeInApp: true,
+          url: 'https://horoscopely-5e04f.firebaseapp.com',
+          }).then(()=>{
+            alert('Verification mail sent successfully')
+          }).catch(()=>{
 
+          }).then( ()=>{
+            firebase.firestore().collection('users')
+            .doc (firebase.auth().currentUser?.uid)
+            .set({
+              firstName:'Sayone',
+              lastName:'sayone',
+              email,
+            })
+            console.log('data stored  successfully!');
+          }).catch((error)=>{
+            console.error('Error data stored:', error?.message);
+          })
+      })
+      console.log('User signed up successfully!');
+    } catch (error:any) {
+      console.error('Error signing up:', error?.message);
+    }
+  };
   const onPressSignup = (): void => {
     navigation.navigate(screenName.REGISTER_FORM)
   };
@@ -48,13 +77,13 @@ const EmailSignupScreen: React.FC = () => {
                 placeholder="Enter your email address"
                 onChange={handleInputChange}
                 isEditable={true}
-                value={inputText}
+                value={email}
               />
             </View>
           </View>
 
           <View style={styles.buttonWrapper}>
-            <GradientButton  buttonName={"Sign Up"} onPress={onPressSignup} containerStyle={styles.buttonContainer} />
+            <GradientButton  buttonName={"Sign Up"} onPress={()=>signUpWithEmail(email)} containerStyle={styles.buttonContainer} />
           </View>
 
           <TouchableOpacity

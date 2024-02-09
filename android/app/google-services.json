@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "368092455829",
+    "firebase_url": "https://horoscopely-5e04f-default-rtdb.firebaseio.com",
+    "project_id": "horoscopely-5e04f",
+    "storage_bucket": "horoscopely-5e04f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368092455829:android:a28ffdfcf72096c9f04c9c",
+        "android_client_info": {
+          "package_name": "com.horoscopely"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPIRObAEPbCWzStt2iJLYqJeZHbFJs2oA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
